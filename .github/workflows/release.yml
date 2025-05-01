@@ -10,6 +10,8 @@ jobs:
     permissions:
       id-token: write
       contents: write
+    env:
+      RELEASE_NAME: svelte5-vite-ts-tailwind-eslint
     steps:
       - name: Checkout 🛒
         uses: actions/checkout@v4
@@ -18,7 +20,8 @@ jobs:
       - name: Build 🔧
         run: |
           npm ci
-          npm run archive
+          npm run build
+          (cd dist && zip -r ../$RELEASE_NAME.zip * && tar -czf ../$RELEASE_NAME.tar.gz *)
 
       - name: Generate Release Notes 📝
         if: github.ref_type == 'tag'
@@ -32,6 +35,6 @@ jobs:
         uses: ncipollo/release-action@v1.14.0
         if: github.ref_type == 'tag'
         with:
-          artifacts: semantic-workshop.zip,semantic-workshop.tar.gz
+          artifacts: $RELEASE_NAME.zip,$RELEASE_NAME.tar.gz
           bodyFile: "changelog.txt"
           prerelease: ${{ env.RELEASE_TYPE }}

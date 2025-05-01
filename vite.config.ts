@@ -4,6 +4,7 @@ import { svelteTesting } from '@testing-library/svelte/vite';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  base: './',
   plugins: [tailwindcss(), svelte(), svelteTesting()],
   test: {
     globals: true,

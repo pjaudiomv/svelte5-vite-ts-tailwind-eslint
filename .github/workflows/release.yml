@@ -32,9 +32,9 @@ jobs:
           echo "RELEASE_TYPE=${RELEASE_TYPE}" >> $GITHUB_ENV
 
       - name: Create Release 🎉
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@v1.16.0
         if: github.ref_type == 'tag'
         with:
-          artifacts: $RELEASE_NAME.zip,$RELEASE_NAME.tar.gz
+          artifacts: ${{ env.RELEASE_NAME }}.zip,${{ env.RELEASE_NAME }}.tar.gz
           bodyFile: "changelog.txt"
           prerelease: ${{ env.RELEASE_TYPE }}

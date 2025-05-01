@@ -124,6 +124,49 @@ Tailwind CSS is pre-configured with:
 - Custom color schemes
 - Prettier plugin for automatic class sorting
 
+## Continuous Integration & Deployment
+
+This template comes with pre-configured GitHub Actions workflows for automated testing, linting, and deployment:
+
+### Testing & Linting Workflow
+- Runs on every push to non-main branches
+- Uses Node.js 20
+- Steps:
+  1. Install dependencies
+  2. Run ESLint checks
+  3. Run test suite
+
+### Deployment Workflow
+- Automatically deploys to GitHub Pages
+- Triggers on:
+  - Push to main branch
+  - Manual workflow dispatch
+- Builds and deploys the static site
+- Provides deployment URL in workflow summary
+
+### Release Workflow
+- Triggers when tags are pushed
+- Creates GitHub releases automatically
+- Features:
+  - Builds the project
+  - Creates .zip and .tar.gz archives
+  - Generates release notes from CHANGELOG.md
+  - Supports beta/rc releases with proper prerelease marking
+  - Attaches build artifacts to releases
+
+### Workflow Files
+```
+.github/workflows/
+├── test.yml     # Testing and linting
+├── static.yml   # GitHub Pages deployment
+└── release.yml  # Release automation
+```
+
+To use these workflows:
+1. Enable GitHub Pages in your repository settings
+2. For releases, push a tag (e.g., `git tag 1.0.0 && git push origin 1.0.0`)
+3. Ensure your CHANGELOG.md is updated before creating releases
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

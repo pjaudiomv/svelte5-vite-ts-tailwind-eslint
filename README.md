@@ -2,6 +2,28 @@
 
 A modern starter template for building web applications with Svelte 5, TypeScript, Vite, and Tailwind CSS.
 
+## Table of Contents
+- [Features](#features)
+- [Why Use This Template?](#why-use-this-template)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Technology Stack](#technology-stack)
+- [Development Features](#development-features)
+  - [Hot Module Replacement (HMR)](#hot-module-replacement-hmr)
+  - [TypeScript Configuration](#typescript-configuration)
+  - [Tailwind CSS Integration](#tailwind-css-integration)
+- [Continuous Integration & Deployment](#continuous-integration--deployment)
+  - [Testing & Linting Workflow](#testing--linting-workflow)
+  - [Deployment Workflow](#deployment-workflow)
+  - [Release Workflow](#release-workflow)
+  - [Workflow Files](#workflow-files)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - 🚀 [Svelte 5](https://svelte.dev) with TypeScript

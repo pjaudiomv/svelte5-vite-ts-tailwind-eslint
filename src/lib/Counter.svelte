@@ -9,7 +9,7 @@
 <div class="mx-auto mt-10 max-w-sm overflow-hidden rounded-lg bg-white shadow-xl transition-shadow duration-300 hover:shadow-2xl">
   <div class="px-6 py-6">
     <div class="mb-4 text-2xl font-bold text-gray-800">Great Scott!</div>
-    <p class="mb-4 text-base text-gray-600">Click the button below to increase your poetic power level.</p>
+    <p class="mb-4 text-base text-gray-600">Click the button below to increase your gigawatt power level.</p>
     <button
       onclick={increment}
       class="flex w-full transform items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-3 font-bold text-white shadow-md transition-all duration-200 hover:scale-105 hover:from-purple-600 hover:to-pink-600"

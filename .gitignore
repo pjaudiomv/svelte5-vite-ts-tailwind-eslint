@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-svelte5-vite-ts-tailwind-eslint.*
+*.zip
+*.tar.gz
+

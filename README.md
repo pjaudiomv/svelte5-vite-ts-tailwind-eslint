@@ -1,47 +1,140 @@
-# Svelte + TS + Vite
+# Svelte 5 + TypeScript + Vite + Tailwind CSS Bootstrap
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+A modern starter template for building web applications with Svelte 5, TypeScript, Vite, and Tailwind CSS.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- 🚀 [Svelte 5](https://svelte.dev) with TypeScript
+- ⚡️ [Vite](https://vitejs.dev) for lightning-fast development
+- 🎨 [Tailwind CSS 4](https://tailwindcss.com) for utility-first styling
+- 🧪 [Vitest](https://vitest.dev) for unit testing
+- 📝 TypeScript for type safety
+- 🔍 ESLint for code linting
+- ✨ Prettier for code formatting
+- 🎯 Pre-configured with best practices
 
-## Need an official Svelte framework?
+## Why Use This Template?
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+This template is ideal if you want to use Svelte without the full SvelteKit framework. It's perfect for:
 
-## Technical considerations
+- **Simple SPAs**: When you don't need server-side rendering or complex routing
+- **Custom Stack**: When you want to choose your own routing, state management, and other tools
+- **Learning Svelte**: Great for understanding Svelte basics without framework overhead
+- **Prototypes**: Quick to start and easy to build upon
+- **Static Sites**: Perfect for sites that don't need a backend
+- **Component Libraries**: Ideal for developing standalone component libraries
 
-**Why use this over SvelteKit?**
+While SvelteKit is an excellent full-featured framework, this template provides a lighter alternative when you:
+- Want more control over your project structure
+- Don't need server-side rendering
+- Prefer to add features as needed
+- Want to minimize bundle size for simple applications
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Getting Started
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+### Prerequisites
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+- Node.js (version 18 or higher)
+- npm or yarn or pnpm
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+### Installation
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/svelte5-vite-ts-tailwind-eslint.git
+cd svelte5-vite-ts-tailwind-eslint
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` to see your application.
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:ui` - Run tests with UI
+- `npm run coverage` - Generate test coverage report
+- `npm run lint` - Lint code
+- `npm run format` - Format code
+
+## Project Structure
+
+```
+/
+├── src/
+│   ├── lib/
+│   │   └── Counter.svelte
+│   ├── app.css
+│   ├── main.ts
+│   └── App.svelte
+├── public/
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── tailwind.config.ts
+└── README.md
+```
+
+## Technology Stack
+
+- **Framework**: Svelte 5 (Beta)
+- **Build Tool**: Vite 6
+- **Styling**: Tailwind CSS 4
+- **Testing**: Vitest
+- **Language**: TypeScript
+- **Code Quality**:
+  - ESLint for linting
+  - Prettier for formatting
+  - TypeScript for type checking
+
+## Development Features
+
+### Hot Module Replacement (HMR)
+
+The template includes HMR support for Svelte components.
+
+### TypeScript Configuration
+
+The project uses TypeScript for type safety. Key configurations include:
+
+- Strict mode enabled
+- Svelte type definitions included
+- Path aliases configured
+- Global type definitions in `src/vite-env.d.ts`
+
+### Tailwind CSS Integration
+
+Tailwind CSS is pre-configured with:
+
+- JIT (Just-In-Time) mode enabled
+- Dark mode support (`class` strategy)
+- Custom color schemes
+- Prettier plugin for automatic class sorting
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License—see the LICENSE file for details.
+
+## Acknowledgments
+
+- Svelte team for the amazing framework
+- Vite team for the build tool
+- Tailwind CSS team for the styling framework
+- All contributors to the included tools and libraries

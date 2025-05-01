@@ -152,7 +152,7 @@ This template comes with pre-configured GitHub Actions workflows for automated t
 
 ### Testing & Linting Workflow
 - Runs on every push to non-main branches
-- Uses Node.js 20
+- Uses Node.js 22
 - Steps:
   1. Install dependencies
   2. Run ESLint checks

@@ -90,7 +90,7 @@ Visit `http://localhost:5173` to see your application.
 
 ## Technology Stack
 
-- **Framework**: Svelte 5 (Beta)
+- **Framework**: Svelte 5
 - **Build Tool**: Vite 6
 - **Styling**: Tailwind CSS 4
 - **Testing**: Vitest

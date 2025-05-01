@@ -18,11 +18,7 @@ jobs:
       - name: Build 🔧
         run: |
           npm ci
-          npm run build
-          cd dist
-          zip -r ../semantic-workshop.zip *
-          tar -czf ../semantic-workshop.tar.gz *
-          cd ..
+          npm run archive
 
       - name: Generate Release Notes 📝
         if: github.ref_type == 'tag'

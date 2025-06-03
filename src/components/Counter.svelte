@@ -57,6 +57,7 @@
     <span class="mr-2 mb-2 inline-block rounded-full bg-pink-100 px-3 py-1 text-sm font-semibold text-pink-800 transition-colors duration-200 hover:bg-pink-200">#delorean</span>
     <span class="mr-2 mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800 transition-colors duration-200 hover:bg-blue-200">#88</span>
   </div>
+  <div>{selectedCharacter}</div>
   <Label>
     Select Character
     <Select class="mt-2" placeholder="Choose character ..." items={characters} bind:value={selectedCharacter} />

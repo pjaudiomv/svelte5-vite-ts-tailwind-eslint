@@ -13,9 +13,9 @@
   let isTimeTraveling = $state(false);
   let showLightning = $state(false);
 
-  let handleInput = () => {
-    console.log('time triggered');
-  };
+  $effect(() => {
+    console.log('inputTime changed:', inputTime);
+  });
 
   const increment = () => {
     count += 1;
@@ -30,6 +30,10 @@
       isTimeTraveling = false;
     }
   };
+
+  $effect(() => {
+    console.log('inputTime changed:', inputTime);
+  });
 </script>
 
 <div class="relative mx-auto mt-10 max-w-sm overflow-hidden rounded-lg bg-white shadow-xl transition-shadow duration-300 hover:shadow-2xl">
@@ -67,11 +71,11 @@
     Select Character
     <Select class="mt-2" placeholder="Choose character ..." items={characters} bind:value={selectedCharacter} />
   </Label>
-  <div class="input-container">
-    <h2 class="input-title">Time Circuit Input</h2>
-    <Input id="time-input" color="purple" placeholder="Enter destination time..." bind:value={inputTime} oninput={handleInput} class="font-mono text-lg" />
-    <p class="input-value">Current Input: {inputTime}</p>
-  </div>
+  <Label>
+    Enter destination time...
+    <Input id="time-input" color="purple" placeholder="Enter destination time..." bind:value={inputTime} class="font-mono text-lg" />
+  </Label>
+  <p class="input-value">Current Input: {inputTime}</p>
 </div>
 
 <style>

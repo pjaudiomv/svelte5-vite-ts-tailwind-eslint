@@ -13,8 +13,14 @@ describe('Counter', () => {
 
   test('select dropdown', async () => {
     render(App);
-    const countryBox = screen.getByRole('combobox', { name: 'Select Character' }) as HTMLSelectElement;
-    expect(countryBox.item(0)?.label).toBe('Choose character ...');
-    await userEvent.selectOptions(countryBox, ['Marty McFly']);
+    const characterBox = screen.getByRole('combobox', { name: 'Select Character' }) as HTMLSelectElement;
+    expect(characterBox.item(0)?.label).toBe('Choose character ...');
+    await userEvent.selectOptions(characterBox, ['Marty McFly']);
+  });
+
+  test('input text', async () => {
+    render(App);
+    const timeTextBox = screen.getByLabelText('Enter destination time...') as HTMLInputElement;
+    expect(timeTextBox).toBeInTheDocument();
   });
 });

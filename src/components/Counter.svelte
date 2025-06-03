@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Select, Label } from 'flowbite-svelte';
+  import { Select, Label, Input } from 'flowbite-svelte';
 
   let selectedCharacter = $state('');
+  let inputTime = $state('');
   let characters = [
     { value: 'mcfly', name: 'Marty McFly' },
     { value: 'doc', name: 'Emmett "Doc" Brown' },
@@ -11,6 +12,10 @@
   let count: number = $state(0);
   let isTimeTraveling = $state(false);
   let showLightning = $state(false);
+
+  let handleInput = () => {
+    console.log('time triggered');
+  };
 
   const increment = () => {
     count += 1;
@@ -62,6 +67,11 @@
     Select Character
     <Select class="mt-2" placeholder="Choose character ..." items={characters} bind:value={selectedCharacter} />
   </Label>
+  <div class="input-container">
+    <h2 class="input-title">Time Circuit Input</h2>
+    <Input id="time-input" color="purple" placeholder="Enter destination time..." bind:value={inputTime} oninput={handleInput} class="font-mono text-lg" />
+    <p class="input-value">Current Input: {inputTime}</p>
+  </div>
 </div>
 
 <style>

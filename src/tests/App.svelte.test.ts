@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import App from '../App.svelte';
 
-describe('Counter', () => {
+describe('Time Machine', () => {
   test('initial screen', async () => {
     render(App);
     expect(screen.getByText('Great Scott!')).toBeInTheDocument();
@@ -13,8 +13,14 @@ describe('Counter', () => {
 
   test('select dropdown', async () => {
     render(App);
-    const countryBox = screen.getByRole('combobox', { name: 'Select Character' }) as HTMLSelectElement;
-    expect(countryBox.item(0)?.label).toBe('Choose character ...');
-    await userEvent.selectOptions(countryBox, ['Marty McFly']);
+    const characterBox = screen.getByRole('combobox', { name: 'Choose your character...' }) as HTMLSelectElement;
+    expect(characterBox.item(0)?.label).toBe('Choose character ...');
+    await userEvent.selectOptions(characterBox, ['Marty McFly']);
+  });
+
+  test('input text', async () => {
+    render(App);
+    const timeTextBox = screen.getByLabelText('HH:MM:SS') as HTMLInputElement;
+    expect(timeTextBox).toBeInTheDocument();
   });
 });

@@ -1,14 +1,10 @@
 <script lang="ts">
-  import { Select, Label } from 'flowbite-svelte';
+  import CharacterSelector from './CharacterSelector.svelte';
+  import TimeInput from './TimeInput.svelte';
 
   let selectedCharacter = $state('');
-  let characters = [
-    { value: 'mcfly', name: 'Marty McFly' },
-    { value: 'doc', name: 'Emmett "Doc" Brown' },
-    { value: 'biff', name: 'Biff Tannen' }
-  ];
-
-  let count: number = $state(0);
+  let inputTime = $state('');
+  let count = $state(0);
   let isTimeTraveling = $state(false);
   let showLightning = $state(false);
 
@@ -51,16 +47,13 @@
       </svg>
     </button>
   </div>
+
   <div class="bg-gray-50 px-6 pt-4 pb-6">
-    <div class="mb-2 font-medium text-gray-700">Popular Tags:</div>
-    <span class="mr-2 mb-2 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-800 transition-colors duration-200 hover:bg-purple-200">#roads</span>
-    <span class="mr-2 mb-2 inline-block rounded-full bg-pink-100 px-3 py-1 text-sm font-semibold text-pink-800 transition-colors duration-200 hover:bg-pink-200">#delorean</span>
-    <span class="mr-2 mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800 transition-colors duration-200 hover:bg-blue-200">#88</span>
+    <div class="space-y-6">
+      <CharacterSelector bind:selectedCharacter />
+      <TimeInput bind:value={inputTime} />
+    </div>
   </div>
-  <Label>
-    Select Character
-    <Select class="mt-2" placeholder="Choose character ..." items={characters} bind:value={selectedCharacter} />
-  </Label>
 </div>
 
 <style>

@@ -1,8 +1,8 @@
 <script lang="ts">
   import './app.css';
-  import Counter from './components/Counter.svelte';
+  import TimeMachine from './components/TimeMachine.svelte';
 </script>
 
-<main>
-  <Counter />
+<main class="container mx-auto p-4">
+  <TimeMachine />
 </main>

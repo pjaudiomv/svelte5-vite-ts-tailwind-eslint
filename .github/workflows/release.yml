@@ -14,11 +14,11 @@ jobs:
       RELEASE_NAME: svelte5-vite-ts-tailwind-eslint
     steps:
       - name: Checkout 🛒
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: node 24 ❇️
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: 'npm'
@@ -45,7 +45,7 @@ jobs:
           echo "RELEASE_TYPE=${RELEASE_TYPE}" >> $GITHUB_ENV
 
       - name: Create Release 🎉
-        uses: ncipollo/release-action@v1.20.0
+        uses: ncipollo/release-action@v1
         if: github.ref_type == 'tag'
         with:
           artifacts: ${{ env.RELEASE_NAME }}.zip,${{ env.RELEASE_NAME }}.tar.gz

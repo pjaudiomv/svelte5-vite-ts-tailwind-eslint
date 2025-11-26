@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 
-import App from '../App.svelte';
+import App from '@/App.svelte';
 
 describe('Time Machine', () => {
   test('initial screen', async () => {

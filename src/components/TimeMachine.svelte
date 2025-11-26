@@ -1,6 +1,6 @@
 <script lang="ts">
-  import CharacterSelector from './CharacterSelector.svelte';
-  import TimeInput from './TimeInput.svelte';
+  import CharacterSelector from '@components/CharacterSelector.svelte';
+  import TimeInput from '@components/TimeInput.svelte';
 
   let selectedCharacter = $state('');
   let inputTime = $state('');

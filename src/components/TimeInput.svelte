@@ -2,12 +2,11 @@
   import { Input, Label } from 'flowbite-svelte';
 
   let { value = $bindable() } = $props();
-  let isValidTime = $state(false);
 
-  $effect(() => {
-    // Validate time format (HH:MM or HH:MM:SS)
+  // Validate time format (HH:MM or HH:MM:SS)
+  const isValidTime = $derived.by(() => {
     const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/;
-    isValidTime = timeRegex.test(value);
+    return timeRegex.test(value);
   });
 </script>
 

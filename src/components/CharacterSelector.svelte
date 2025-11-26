@@ -11,13 +11,10 @@
     { value: 'george', name: 'George McFly', quote: 'If you put your mind to it, you can accomplish anything.' }
   ];
 
-  let characterQuote = $state('');
-
-  $effect(() => {
-    if (selectedCharacter) {
-      const character = characters.find((c) => c.value === selectedCharacter);
-      characterQuote = character?.quote || '';
-    }
+  const characterQuote = $derived.by(() => {
+    if (!selectedCharacter) return '';
+    const character = characters.find((c) => c.value === selectedCharacter);
+    return character?.quote || '';
   });
 </script>
 

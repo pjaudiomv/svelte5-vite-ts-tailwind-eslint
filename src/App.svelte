@@ -1,8 +1,8 @@
 <script lang="ts">
   import './app.css';
-  import TimeMachine from '@components/TimeMachine.svelte';
+  import HelloWorld from '@components/HelloWorld.svelte';
 </script>
 
 <main class="container mx-auto p-4">
-  <TimeMachine />
+  <HelloWorld />
 </main>
